@@ -1,0 +1,23 @@
+:root {
+	
+}
+
+::-webkit-scrollbar {
+	display:none;
+}
+
+.ui-loader.ui-corner-all.ui-body-a.ui-loader-default h1 {
+	display: none;
+}
+
+html {
+	width: 360px;
+	height: 565px;
+}
+
+@media only screen and (min-width: 361px) {
+	html {
+		width: 100vw;
+		height: 100vh;
+	}
+}
