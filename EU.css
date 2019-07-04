@@ -1,5 +1,5 @@
 :root {
-	--fOne: 'Economica',sans-serif;
+	--fOne: 'Economica', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -20,6 +20,10 @@ html {
 body {
 	margin: 0px;
 	padding: 0px;
+}
+
+#theBody {
+	margin-top: 200px;
 }
 
 #header {
