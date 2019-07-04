@@ -77,7 +77,18 @@
 	})
 
 $(window).on('beforeunload',function() {
-		$('#thebody').css('color','blue');
+		if (triggered === true) {
+			return; //this is run automatically after the timeout
+		}
+
+		event.preventDefault();
+		// your animation here
+$('#thebody').css('color','blue');
+		triggered = true; // set flag
+		setTimeout(function(){$(this).trigger('unload');},1000);
+
+
+		
 	})
 	
 	$('#NotHeader').click(function() {
