@@ -45,6 +45,8 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="https://tether.corehoundsystem.com/icons/favicon-16x16.png">
 	</head>
 	<body>
+	<div id="header"></div>
+		<div id="NotHeader"></div>
 		<script>
 			/*
 			google tag manager
@@ -53,8 +55,48 @@
 			twitter cards
 			og tags
 			most other meta tags
+			
+			TEST!!!
+			*getURL
+			dimensions
+			positions
+			root
+			z-index
+			*google fonts
+			*browser version
+			*.unload()
 			*/
+			
+			function getUrlVars() {						//var varName = getUrlVars()["varName"];
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		value = value.split("#");
+		value = value[0];
+		vars[key] = value;
+	});
+	console.log(vars);
+	return vars;
+}
+	
+	var varName = getUrlVars()["varName"];
+	
+	$(function() {
+		$(body).text($(body).text() + $.browser.version);
+	})
+
+window.unload(function() {
+		$(body).css('color','blue');
+	})
+	
+	$('#NotHeader').click(function() {
+		$(this).toggleClass('level');
+	})
 		</script>
+		
+		
+		
+		
+		
 		
 		
 	</body>
