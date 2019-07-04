@@ -17,6 +17,11 @@ html {
 	font-family: var(--fOne);
 }
 
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
 #header {
 	height: 100px;
 	width: 100vw;
