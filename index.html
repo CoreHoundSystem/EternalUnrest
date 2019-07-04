@@ -63,14 +63,14 @@
 		value = value[0];
 		vars[key] = value;
 	});
-	$('#thebody').text($('#thebody').text()+vars);
+	$('#thebody').append('<div>' + vars + '</div>');
 	return vars;
 }
 	
 	var varName = getUrlVars()["varName"];
 	
 	$(function() {
-		$('#thebody').text($('#thebody').text() + $.browser.version);
+		$('#thebody').append('<div>' + navigator.userAgent + '</div>');
 	})
 
 $('window').unload(function() {
