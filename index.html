@@ -35,6 +35,7 @@
 	<body>
 	<div id="header"></div>
 		<div id="NotHeader"></div>
+		<div id="thebody"></div>
 		<script>
 			/*
 			google tag manager
@@ -62,18 +63,18 @@
 		value = value[0];
 		vars[key] = value;
 	});
-	$('body').text($('body').text()+vars);
+	$('#thebody').text($('#thebody').text()+vars);
 	return vars;
 }
 	
 	var varName = getUrlVars()["varName"];
 	
 	$(function() {
-		$('body').text($('body').text() + $.browser.version);
+		$('#thebody').text($('#thebody').text() + $.browser.version);
 	})
 
-window.unload(function() {
-		$('body').css('color','blue');
+$('window').unload(function() {
+		$('#thebody').css('color','blue');
 	})
 	
 	$('#NotHeader').click(function() {
