@@ -64,13 +64,13 @@
 		value = value[0];
 		vars[key] = value;
 	});
-	$('#thebody').append('<div>' + vars + '</div>');
 	return vars;
 }
 	
 	var varName = getUrlVars()["varName"];
 	
 	$(function() {
+		$('#thebody').append('<div>' + varName + '</div>');
 		$('#thebody').append('<div>' + navigator.userAgent + '</div>');
 	})
 
