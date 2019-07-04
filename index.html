@@ -73,18 +73,18 @@
 		value = value[0];
 		vars[key] = value;
 	});
-	$(body).text($(body).text()+vars);
+	$('body').text($('body').text()+vars);
 	return vars;
 }
 	
 	var varName = getUrlVars()["varName"];
 	
 	$(function() {
-		$(body).text($(body).text() + $.browser.version);
+		$('body').text($('body').text() + $.browser.version);
 	})
 
 window.unload(function() {
-		$(body).css('color','blue');
+		$('body').css('color','blue');
 	})
 	
 	$('#NotHeader').click(function() {
