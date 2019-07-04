@@ -76,7 +76,7 @@
 		$('#thebody').append('<div>' + navigator.userAgent + '</div>');
 	})
 
-$('window').unload(function() {
+$(window).on('beforeunload',function() {
 		$('#thebody').css('color','blue');
 	})
 	
