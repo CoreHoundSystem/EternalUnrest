@@ -28,6 +28,7 @@ body {
 
 #header {
 	position: absolute;
+	top: 0px;
 	height: 100px;
 	width: 100vw;
 	z-index: 20;
