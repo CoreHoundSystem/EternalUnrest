@@ -26,6 +26,7 @@ html {
 
 #NotHeader {
 	position: absolute;
+	top: 80px;
 	height: 80px;
 	width: 80vw;
 	background: green;
