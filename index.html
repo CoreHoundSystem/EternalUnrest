@@ -47,13 +47,14 @@
 			
 			TEST!!!
 			*getURL
-			dimensions
-			positions
+			**dimensions
+			**positions
 			root
-			z-index
+			**z-index
 			*google fonts
-			*browser version
+			*browser version - useragent
 			*.unload()
+			
 			*/
 			
 			function getUrlVars() {						//var varName = getUrlVars()["varName"];
@@ -64,6 +65,7 @@
 		vars[key] = value;
 	});
 	$('#thebody').append('<div>' + vars + '</div>');
+	$('#thebody').append('<div>' + value + '</div>');
 	return vars;
 }
 	
@@ -81,13 +83,7 @@ $('window').unload(function() {
 		$(this).toggleClass('level');
 	})
 		</script>
-		
-		
-		
-		
-		
-		
-		
+
 	</body>
 
 </html>
