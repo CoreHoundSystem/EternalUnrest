@@ -76,6 +76,7 @@
 		$('#thebody').append('<div>' + navigator.userAgent + '</div>');
 	})
 
+			var triggered = false; 
 $(window).on('beforeunload',function() {
 		if (triggered === true) {
 			return; //this is run automatically after the timeout
