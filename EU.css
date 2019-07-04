@@ -17,7 +17,7 @@ html {
 	font-family: var(--fOne);
 }
 
-#Header {
+#header {
 	height: 100px;
 	width: 100vw;
 	z-index: 20;
