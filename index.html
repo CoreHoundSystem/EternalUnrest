@@ -36,7 +36,7 @@
 	<div id="header"></div>
 		<div id="NotHeader"></div>
 		<div id="thebody">
-		<a href="https://eternalunrest.corehoundsystem.com/?varName=Test" target="_self">Unload?</a>
+			<div id="button"></div>
 		</div>
 		<script>
 			/*
@@ -48,13 +48,13 @@
 			most other meta tags
 			
 			TEST!!!
-			*getURL
+			**getURL
 			**dimensions
 			**positions
 			root
 			**z-index
-			*google fonts
-			*browser version - useragent
+			**google fonts
+			**browser version - useragent
 			*.unload()
 			
 			*/
@@ -83,8 +83,12 @@ $('window').unload(function() {
 	$('#NotHeader').click(function() {
 		$(this).toggleClass('level');
 	})
+	
+	$('#button').click(function() {
+		window.location="https://eternalunrest.corehoundsystem.com/?varName=Test";
+	})
 		</script>
-
+		
 	</body>
 
 </html>
