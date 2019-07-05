@@ -1,5 +1,16 @@
 :root {
-	--fOne: 'Economica', sans-serif;
+	--f0: 'Economica', sans-serif;
+	--f1: 'Metamorphous', cursive;
+	--f2: 'Kristi', cursive;
+	--f3: 'Tulpen One', cursive;
+	--f4: 'Cinzel Decorative', cursive;
+	--f5: 'Nanum Brush Script', cursive;
+	
+	--halfTile: 20px;
+	--fullTile: 40px;
+	--doubleTile: 80px;
+	
+	--shadow: #121212;
 }
 
 ::-webkit-scrollbar {
@@ -12,41 +23,183 @@
 
 html {
 	width: 360px;
-	height: 565px;
-	background: brown;
-	font-family: var(--fOne);
+	height: 560px;
+	font-family: var(--f0);
 }
 
 body {
 	margin: 0px;
 	padding: 0px;
+	background-color: #222;
+	background-size: cover;
 }
 
-#thebody {
-	margin-top: 200px;
+body.vampire {
+	background-image: url();
 }
 
-#header {
+body.demon {
+	background-image: url();
+}
+
+body.angel {
+	background-image: url();
+}
+
+body.werewolf {
+	background-image: url();
+}
+
+body.fae {
+	background-image: url();
+}
+
+body.vampire button {
+	background-image: linear-gradient(to bottom, #c00, #700);
+}
+
+body.demon button {
+	background-image: url();
+}
+
+body.angel button {
+	background-image: url();
+}
+
+body.werewolf button {
+	background-image: url();
+}
+
+body.fae button {
+	background-image: url();
+}
+
+
+button {
+	border: none;
+	border-radius: 3px;
+	line-height: var(--halfTile);
+	padding: 3px 10px;
+	margin: 7px;
+	text-shadow: 0px 0px 1px black;
+	color: ghostwhite;
+	font-family: var(--f1);
+	font-size: 18px;
+	box-shadow: inset 0px 0px 2px var(--shadow), 0px 0px 5px var(--shadow), 0px 0px 1px black, 0px 0px 2px ghostwhite;
+	cursor: pointer;
+	outline: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div:hover>h1, div:hover>h2, div:hover>span {
+	text-shadow: 0px 0px 10px #ddd;
+}
+
+.bar {
 	position: absolute;
-	top: 0px;
-	height: 100px;
+	left: 0px;
 	width: 100vw;
-	z-index: 20;
-	background: red;
 }
 
-#NotHeader {
-	position: absolute;
-	top: 80px;
-	left: 40px;
-	height: 80px;
-	width: 80vw;
-	background: green;
-	z-index: 50;
+#tasks button {
+	margin: 7px auto;
+    border-radius: 0px;
 }
 
-.level {
-	z-index: 10 !important;;
+.box {
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	color: ghostwhite;
+	text-shadow: 0px 0px 2px var(--shadow);
+	overflow: hidden;
+	vertical-align: top;
+}
+
+.box h1 {
+	margin: auto;
+	font-family: var(--f4);
+	font-size: 150%;
+}
+
+.box h1~h1 {
+	font-size: 200%;
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+
+.box div {
+	width: 80%;
+	height: 4px;
+	margin: 7px auto;
+	box-shadow: 0px 0px 10px var(--shadow), 0px 0px 3px #222;
+	border: 1px solid #333;
+}
+
+.box h2 {
+	display: block;
+	width: calc(100% - 20px);
+	text-align: right;
+	padding: 0px 10px;
+	margin: 6px 0px 0px 0px;
+	font-size: 130%;
+	font-family: var(--f4);
+}
+
+.box h2~h2 {
+	margin: 1px 0px 0px 0px;
+	font-size: 80%;
+	font-family: var(--f4);
+}
+
+.box div span {
+	margin-top: -8px;
+	display: -webkit-inline-box;
+}
+
+.centerd {
+	padding: 8px 0px;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+#travel {
+	top: 0px;
+	height: var(--fullTile);
+	box-shadow: 0px 0px 10px var(--shadow);
+}
+
+#title {
+	top: var(--fullTile);
+	height: var(--doubleTile);
+}
+
+#pools {
+	top: calc(var(--fullTile) * 3);
+	height: calc(var(--fullTile) + var(--halfTile));
+}
+
+#tasks {
+	top: calc(var(--fullTile) * 4.5);
+	height: var(--fullTile);
+}
+
+#modal {
+	bottom: 0px;
+	height: 100vh;
+	width: 100vw;
 }
 
 @media only screen and (min-width: 361px) {
