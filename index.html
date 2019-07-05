@@ -5,9 +5,19 @@
 		<script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
 		<script src='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js'></script>
 		<link rel="stylesheet" href="https://eternalunrest.corehoundsystem.com/EU.css">
+		<script src='https://eternalunrest.corehoundsystem.com/DataPulls.js'></script>
 		
+		<script src="https://apis.google.com/js/platform.js" defer></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141646766-1"></script>
 		<meta name="google-signin-client_id" content="490035051167-telktu66bclipehu72ciu9m7gta0qlja.apps.googleusercontent.com">
 		<meta name="twitter:card" content="summary_large_image">
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('set', {'user_id': 'USER_ID'});
+			gtag('config', 'UA-143189211-1');
+		</script>
 		<meta name="twitter:site" content="@SLtether">
 		<meta name="twitter:creator" content="@SLtether">
 		<meta name="twitter:title" content="Tether, Take SL Music With You!">
@@ -27,80 +37,39 @@
 		<meta http-equiv="window-target" content="_top">
 		<meta name="theme-color" content="#008080">
 		<link rel="icon" sizes="192x192" href="https://tether.corehoundsystem.com/icons/android-chrome-192x192.png">
-		<link href="https://fonts.googleapis.com/css?family=Economica|Unica+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Economica|Kristi|Metamorphous|Nanum+Brush+Script|Tulpen+One&display=swap" rel="stylesheet">
 		<link rel="apple-touch-icon" sizes="180x180" href="https://tether.corehoundsystem.com/icons/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="https://tether.corehoundsystem.com/icons/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="https://tether.corehoundsystem.com/icons/favicon-16x16.png">
 	</head>
-	<body>
-	<div id="header"></div>
-		<div id="NotHeader"></div>
-		<div id="thebody">
-			<div id="button">Unload</div>
-		</div>
-		<script>
-			/*
-			google tag manager
-			gtag config
-			google signinclientid content
-			twitter cards
-			og tags
-			most other meta tags
-			
-			TEST!!!
-			**getURL
-			**dimensions
-			**positions
-			root
-			**z-index
-			**google fonts
-			**browser version - useragent
-			*.unload()
-			
-			*/
-			
-			function getUrlVars() {						//var varName = getUrlVars()["varName"];
-	var vars = {};
-	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-		value = value.split("#");
-		value = value[0];
-		vars[key] = value;
-	});
-	return vars;
-}
-	
-	var varName = getUrlVars()["varName"];
-	
-	$(function() {
-		$('#thebody').append('<div>' + varName + '</div>');
-		$('#thebody').append('<div>' + navigator.userAgent + '</div>');
-	})
-
-			var triggered = false; 
-$(window).on('beforeunload',function() {
-		if (triggered === true) {
-			return; //this is run automatically after the timeout
-		}
-
-		event.preventDefault();
-		// your animation here
-$('#thebody').css('color','blue');
-		triggered = true; // set flag
-		setTimeout(function(){$(this).trigger('unload');},10000);
-
-
+	<body class="vampire">
+		<div id="travel" class="bar"><button class="right">Travel</button></div>
+		<div id="title" class="bar"></div>
+		<div id="pools" class="bar"></div>
+		<div id="tasks" class="bar"></div>
 		
-	})
-	
-	$('#NotHeader').click(function() {
-		$(this).toggleClass('level');
-	})
-	
-	$('#button').click(function() {
-		window.location="https://eternalunrest.corehoundsystem.com/?varName=Test";
-	})
-		</script>
 		
 	</body>
-
+	<script>
+		function getUrlVar() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				value = value.split("#");
+				value = value[0];
+				vars[key] = value;
+			});
+			return vars;
+		}
+		
+		u=getUrlVar()["u"];
+		l=getUrlVar()["l"];
+		f=getUrlVar()["f"];
+		e=getUrlVar()["e"];
+		
+		$(function() {
+			if(jQuery.type(u)==="string") {
+				getUser(uKey,"1");
+			}
+		})
+	</script>
 </html>
