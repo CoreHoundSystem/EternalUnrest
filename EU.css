@@ -11,6 +11,13 @@
 	--doubleTile: 80px;
 	
 	--shadow: #121212;
+	
+	--cGrade: white !important;
+	--uGrade: green !important;
+	--rGrade: blue !important;
+	--eGrade: purple !important;
+	--lGrade: orange !important;
+	--aGrade: gold !important;
 }
 
 ::-webkit-scrollbar {
@@ -35,7 +42,7 @@ body {
 }
 
 body.vampire {
-	background-image: url();
+	background-image: url(https://eternalunrest.corehoundsystem.com/Images/dark%20woods.jpg);
 }
 
 body.demon {
@@ -74,6 +81,12 @@ body.fae button {
 	background-image: url();
 }
 
+h1 {
+	margin: 0px 0px 0px 10px;
+	display: inline-block;
+	color: ghostwhite;
+	font-weight: 100;
+}
 
 button {
 	border: none;
@@ -100,6 +113,30 @@ div:hover>h1, div:hover>h2, div:hover>span {
 	text-shadow: 0px 0px 10px #ddd;
 }
 
+.common {
+	color: var(--cGrade);
+}
+
+.uncommon {
+	color: var(--uGrade);
+}
+
+.rare {
+	color: var(--rGrade);
+}
+
+.epic {
+	color: var(--eGrade);
+}
+
+.legendary {
+	color: var(--lGrade);
+}
+
+.artifact {
+	color: var(--aGrade);
+}
+
 .bar {
 	position: absolute;
 	left: 0px;
@@ -107,8 +144,9 @@ div:hover>h1, div:hover>h2, div:hover>span {
 }
 
 #tasks button {
-	margin: 7px auto;
-    border-radius: 0px;
+	margin: 4px auto;
+	border-radius: 0px;
+	height: calc(var(--fullTile) - 8px);
 }
 
 .box {
@@ -181,6 +219,11 @@ div:hover>h1, div:hover>h2, div:hover>span {
 	box-shadow: 0px 0px 10px var(--shadow);
 }
 
+#travel h1 {
+	font-size: 30px;
+	line-height: 40px;
+}
+
 #title {
 	top: var(--fullTile);
 	height: var(--doubleTile);
@@ -191,15 +234,353 @@ div:hover>h1, div:hover>h2, div:hover>span {
 	height: calc(var(--fullTile) + var(--halfTile));
 }
 
-#tasks {
+#inventory {
 	top: calc(var(--fullTile) * 4.5);
+	height: var(--doubleTile);
+}
+
+.region {
+	height: 100%;
+	min-width: calc(var(--fullTile) * 1.25);
+	display: inline-block;
+	padding: 0px 5px;
+	margin-left: 5px;
+}
+
+.region~.region {
+	margin-left: 0px;
+}
+
+.region.held::after, .region.worn::after, .region.carried::after {
+	border-right: 2px solid rgba(128,128,128,0.2);
+	margin-left: 4px;
+	top: 25px;
+	height: calc(var(--fullTile) * 1.25);
+	content: '';
+	position: absolute;
+}
+
+.region h1 {
+	margin: 4px auto 0px auto;
+	font-size: 80%;
+	display: table;
+	font-family: var(--f4);
+}
+
+.region .item {
+	position: relative;
+	width: calc(var(--fullTile) * 1.25);
+	height: calc(var(--fullTile) * 1.25);
+	display: inline-block;
+	vertical-align: top;
+	margin: 4px auto 5px auto;
+	background-size: cover;
+	background-position: center center;
+}
+
+.region .item.equipped:hover::after {
+	content: "";
+	left: var(--halfTile);
+	top: 45px;
+	position: absolute;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-bottom: 5px solid rgba(192,192,192,0.8);
+	border-top: 5px solid transparent;
+	z-index: 1;
+}
+
+.region .item.equipped:hover::before {
+	content: '';
+	box-shadow: 0px 0px 30px 20px #0ff;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	z-index: -1;
+}
+
+#inventory .toolTip {
+	width: calc(100% - 16px);
+	height: auto;
+	max-height: 0px;
+	top: 80px;
+	left: 5px;
+	position: absolute;
+	background: rgba(0,0,0,0.8);
+	border-radius: 3px;
+	box-shadow: 0px 10px 10px var(--shadow);
+	overflow: hidden;
+	z-index: 1;
+}
+
+#inventory .toolTip.show {
+	margin: 0px;
+	color: ghostwhite;
+	text-shadow: none;
+	font-weight: 100;
+	//height: 290px;
+	max-height: 290px;
+	border: 3px ridge rgba(192,192,192,0.8);
+	border-radius: 8px;
+}
+
+#inventory .toolTip.show::before {
+	content:'';
+}
+
+#inventory .toolTip.show .inner {
+	border-radius: 5px;
+	width: calc(100% - 14px);
+	height: 100%;
+	margin: 0px;
+	padding: 7px;
+}
+
+#inventory .toolTip.show .itemHeader>div {
+	width: var(--doubleTile);
+	height: var(--doubleTile);
+	background-size: cover;
+	background-position: center center;
+	display: inline-block;
+	float: right;
+}
+
+#inventory .toolTip.show h1, #inventory .toolTip.show h2 {
+	margin: 0px;
+	font-weight: 100;
+	font-size: 100%;
+}
+
+#inventory .toolTip.show .itemHeader>h1 {
+	font-size: 140%;
+}
+
+.region .item~.item {
+	margin-left: 5px;
+}
+
+#tasks {
+	top: calc(var(--fullTile) * 6.5);
 	height: var(--fullTile);
 }
 
 #modal {
+	position: absolute;
 	bottom: 0px;
+	left: 0px;
 	height: 100vh;
 	width: 100vw;
+	max-height: 0px;
+	color: ghostwhite;
+	background-image: linear-gradient(to bottom,#222,#111);
+	transition: .5s ease-in-out;
+	z-index: 100;
+}
+
+#modal.open {
+	max-height: 100vh;
+}
+
+.modalHeader {
+	display: table-cell;
+	width: 100vw;
+	line-height: var(--fullTile);
+	font-size: 20px;
+	box-shadow: 0px 0px 10px var(--shadow);
+}
+
+.modalCollapse {
+	height: var(--fullTile);
+	width: var(--fullTile);
+	display: inline-block;
+	margin: auto;
+	
+}
+
+.modalCollapse div {
+	border: 2px solid ghostwhite;
+	background: ghostwhite;
+}
+
+.modalCollapse>div {
+	margin: 18px auto;
+	width: 20px;
+	position: relative;
+}
+
+.modalCollapse>div div:nth-child(1) {
+	transform: rotate(-45deg);
+	top: -1px !important;
+	left: -2px;
+	transform-origin: left;
+	width: 10px;
+	position: absolute;
+}
+
+.modalCollapse>div div:nth-child(2) {
+	transform: rotate(45deg);
+	top: -3px !important;
+	left: -2px;
+	transform-origin: left;
+	width: 10px;
+	position: absolute;
+}
+
+#modal h1 {
+	height: var(--fullTile);
+	display: inline-block;
+    margin: auto;
+	vertical-align: top;
+	font-size: 30px;
+	padding-left: var(--halfTile);
+}
+
+.modalBody {
+	padding: 10px;
+	font-family: var(--f3);
+	font-size: 20px;
+}
+
+.questBox {
+	background-size: cover;
+	background-position: center center;
+	margin-bottom: 5px;
+	overflow: hidden;
+	box-shadow: inset 0px 0px 5px rgba(255,255,255,0.9), 0px 0px 10px rgba(255,255,255,0.1);
+	border-radius: 3px;
+}
+
+.questBox:hover {
+	box-shadow: inset 0px 0px 5px rgba(255,255,255,0.9), 0px 0px 10px rgba(120,0,0,1);
+}
+
+.questBox>div {
+	padding: 5px;
+	position: relative;
+	background-color: rgba(0,0,0,0.6);
+}
+
+.questBox h2 {
+	margin: 0px;
+	font-weight: 100;
+}
+
+.questBox h3 {
+	margin: 0px;
+	font-weight: 100;
+}
+
+.cost {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 19px;
+}
+
+.time {
+	position: absolute;
+	top: 25px;
+	right: 5px;
+	font-size: 19px;
+}
+
+.things {
+	position: absolute;
+	top: 45px;
+	right: 5px;
+	font-size: 19px;
+}
+
+.things .item, .rewards .item {
+	width: 16px;
+	height: 16px;
+	box-shadow: 0px 0px 2px ghostwhite;
+	margin: 2px 1px 2px 4px;
+	display: inline-block;
+	position: relative;
+	background-color: white;
+	background-size: cover;
+	background-position: center center;
+}
+
+.item~span {
+	vertical-align: text-top;
+	font-family: var(--f0);
+	font-size: 80%;
+	margin-left: 2px;
+}
+
+.things .item:hover::after, .rewards .item:hover::after {
+	content: "";
+	left: 3px;
+	top: -5px;
+	position: absolute;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-top: 5px solid whitesmoke;
+	z-index: 1;
+}
+
+.toolTip {
+	width: calc(100% - 10px);
+	height: 37px;
+	max-height: 0px;
+	top: 5px;
+	left: 5px;
+	position: absolute;
+	background: whitesmoke;
+	border-radius: 3px;
+	box-shadow: 0px 10px 10px var(--shadow);
+	overflow: hidden;
+}
+
+.questThings .toolTip.show {
+	max-height: 37px;
+}
+
+.questRewards .toolTip.show {
+	max-height: 37px;
+}
+
+.toolTip>div {
+	background-size: cover;
+	background-position: center center;
+	width: 27px;
+	height: 27px;
+	margin: 5px;
+	display: inline-block;
+}
+
+.toolTip>div~span {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 27px;
+	color: var(--shadow);
+	margin: 5px 0px;
+	font-size: 27px;
+	font-weight: bold;
+}
+
+.toolTip>div~span~span {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 27px;
+	color: var(--shadow);
+	margin: 5px 0px;
+	font-size: 27px;
+	font-weight: bold;
+}
+
+.midline>div{
+	width: 90%;
+	height: 4px;
+	margin: 7px auto;
+	box-shadow: 0px 0px 10px var(--shadow), 0px 0px 3px #222;
+	border: 1px solid #333;
+}
+
+.midline span{
+	
 }
 
 @media only screen and (min-width: 361px) {
